@@ -17,8 +17,12 @@ find_package(interfaces REQUIRED)
 add_executable(listener src/subscriber.cpp)
 ament_target_dependencies(listener rclcpp interfaces)
 
+add_executable(talker src/publisher.cpp)
+ament_target_dependencies(talker rclcpp interfaces)
+
 install(TARGETS
   listener
+  talker
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
